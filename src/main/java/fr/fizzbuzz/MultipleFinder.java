@@ -6,4 +6,8 @@ public class MultipleFinder {
       return true;
     return false;
   }
+
+  public boolean isMultipleOfFive(int numberToTest) {
+    return false;
+  }
 }

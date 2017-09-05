@@ -28,4 +28,9 @@ public class MultipleFinderTest {
   public void should_return_true_when_a_multiple_of_3_other_than_3_is_given() throws Exception {
     assertThat(multipleFinder.isMultipleOfThree(9)).isTrue();
   }
+
+  @Test
+  public void should_return_false_if_0_is_given_as_a_multiple_of_5() throws Exception {
+    assertThat(multipleFinder.isMultipleOfFive(0)).isFalse();
+  }
 }
