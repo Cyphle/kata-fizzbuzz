@@ -34,7 +34,7 @@ public class Number {
   }
 
   public boolean isMultipleOf(int... multiplicities) {
-    return IntStream.of(multiplicities)
+    return value!= 0 && IntStream.of(multiplicities)
             .allMatch(multiplicity -> value%multiplicity == 0);
   }
 }

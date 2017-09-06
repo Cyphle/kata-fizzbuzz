@@ -97,4 +97,15 @@ public class NumberTest {
     assertThat(multipleNumber.isMultipleOf(3, 5)).isTrue();
     assertThat(otherMultipleNumber.isMultipleOf(3, 5)).isTrue();
   }
+
+  @Test
+  public void should_return_false_when_a_number_is_tested_for_multiple_of_3_and_5_and_is_not() throws Exception {
+    Number zeroNumber = new Number(0);
+    Number numberTwo = new Number(2);
+    Number numberEleven = new Number(11);
+
+    assertThat(zeroNumber.isMultipleOf(3, 5)).isFalse();
+    assertThat(numberTwo.isMultipleOf(3, 5)).isFalse();
+    assertThat(numberEleven.isMultipleOf(3, 5)).isFalse();
+  }
 }
