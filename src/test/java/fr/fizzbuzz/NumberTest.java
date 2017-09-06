@@ -88,4 +88,13 @@ public class NumberTest {
     assertThat(anyNumber.isMultipleOf(5)).isTrue();
     assertThat(anotherAnyNumber.isMultipleOf(5)).isTrue();
   }
+
+  @Test
+  public void should_return_true_when_number_is_multiple_of_3_and_5() throws Exception {
+    Number multipleNumber = new Number(15);
+    Number otherMultipleNumber = new Number(30);
+
+    assertThat(multipleNumber.isMultipleOf(3, 5)).isTrue();
+    assertThat(otherMultipleNumber.isMultipleOf(3, 5)).isTrue();
+  }
 }

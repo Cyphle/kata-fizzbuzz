@@ -1,5 +1,10 @@
 package fr.fizzbuzz;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.IntStream;
+
 public class Number {
   private int value;
 
@@ -26,5 +31,10 @@ public class Number {
     if (value != 0 && value%multiplicityToTest == 0)
       return true;
     return false;
+  }
+
+  public boolean isMultipleOf(int... multiplicities) {
+    return IntStream.of(multiplicities)
+            .allMatch(multiplicity -> value%multiplicity == 0);
   }
 }
