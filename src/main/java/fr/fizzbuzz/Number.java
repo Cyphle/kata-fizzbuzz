@@ -14,17 +14,15 @@ public class Number {
 
   @Deprecated
   public boolean isMultipleOfThree(int numberToTest) {
-    if (numberToTest != 0 && numberToTest%3 == 0)
-      return true;
-    return false;
+    return new Number(numberToTest).isMultipleOf(3);
+//    if (numberToTest != 0 && numberToTest%3 == 0)
+//      return true;
+//    return false;
   }
 
   @Deprecated
   public boolean isMultipleOfFive(int numberToTest) {
     return new Number(numberToTest).isMultipleOf(5);
-//    if (numberToTest != 0 && numberToTest%5 == 0)
-//      return true;
-//    return false;
   }
 
   @Deprecated
