@@ -1,6 +1,6 @@
 package fr.fizzbuzz;
 
-public class MultipleFinder {
+public class Number {
   public boolean isMultipleOfThree(int numberToTest) {
     if (numberToTest != 0 && numberToTest%3 == 0)
       return true;
