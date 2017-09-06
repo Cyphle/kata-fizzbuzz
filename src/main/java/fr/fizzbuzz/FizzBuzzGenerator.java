@@ -4,23 +4,27 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
 
-public class FizzBuzzGenerator {
-  private List<Number> numbers;
+class FizzBuzzGenerator {
+  private final List<Number> numbers;
 
-  public FizzBuzzGenerator() {
+  FizzBuzzGenerator() {
     numbers = new ArrayList<>();
   }
 
-  public String generate(int suiteStart, int suiteEnd) {
+  String generate(int suiteStart, int suiteEnd) {
     createNumbers(suiteStart, suiteEnd);
 
     StringJoiner fizzBuzzSuite = new StringJoiner(" ");
 
-    numbers.forEach(number -> {
-      getWordToPrint(fizzBuzzSuite, number);
-    });
+    numbers.forEach(number -> getWordToPrint(fizzBuzzSuite, number));
 
     return fizzBuzzSuite.toString();
+  }
+
+  private void createNumbers(int suiteStart, int suiteEnd) {
+    for (int i = suiteStart; i <= suiteEnd; ++i) {
+      numbers.add(new Number(i));
+    }
   }
 
   private void getWordToPrint(StringJoiner fizzBuzzSuite, Number number) {
@@ -31,11 +35,5 @@ public class FizzBuzzGenerator {
     }
 
     fizzBuzzSuite.add(word);
-  }
-
-  private void createNumbers(int suiteStart, int suiteEnd) {
-    for (int i = suiteStart; i <= suiteEnd; ++i) {
-      numbers.add(new Number(i));
-    }
   }
 }

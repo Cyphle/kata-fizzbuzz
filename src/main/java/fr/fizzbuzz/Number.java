@@ -2,18 +2,18 @@ package fr.fizzbuzz;
 
 import java.util.stream.IntStream;
 
-public class Number {
-  private int value;
+class Number {
+  private final int value;
 
-  public Number(int value) {
+  Number(int value) {
     this.value = value;
   }
 
-  public int getValue() {
+  int getValue() {
     return value;
   }
 
-  public boolean isMultipleOf(int... multiplicities) {
+  boolean isMultipleOf(int... multiplicities) {
     return value!= 0 && IntStream.of(multiplicities)
             .allMatch(multiplicity -> value%multiplicity == 0);
   }
