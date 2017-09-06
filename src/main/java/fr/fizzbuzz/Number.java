@@ -5,9 +5,6 @@ import java.util.stream.IntStream;
 public class Number {
   private int value;
 
-  public Number() {
-  }
-
   public Number(int value) {
     this.value = value;
   }
@@ -15,9 +12,6 @@ public class Number {
   @Deprecated
   public boolean isMultipleOfThree(int numberToTest) {
     return new Number(numberToTest).isMultipleOf(3);
-//    if (numberToTest != 0 && numberToTest%3 == 0)
-//      return true;
-//    return false;
   }
 
   @Deprecated
