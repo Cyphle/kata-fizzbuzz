@@ -23,7 +23,7 @@ public class Number {
   }
 
   public boolean isMultipleOf(int multiplicityToTest) {
-    if (value != 0 && (value%3 == 0 || value == 5))
+    if (value != 0 && value%multiplicityToTest == 0)
       return true;
     return false;
   }

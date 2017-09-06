@@ -79,4 +79,13 @@ public class NumberTest {
 
     assertThat(numberFive.isMultipleOf(5)).isTrue();
   }
+
+  @Test
+  public void should_return_true_if_number_is_a_multiple_of_5_when_testing_if_multiple_of_5() throws Exception {
+    Number anyNumber = new Number(20);
+    Number anotherAnyNumber = new Number(25);
+
+    assertThat(anyNumber.isMultipleOf(5)).isTrue();
+    assertThat(anotherAnyNumber.isMultipleOf(5)).isTrue();
+  }
 }
