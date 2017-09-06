@@ -49,4 +49,20 @@ public class NumberTest {
 
     assertThat(zeroNumber.isMultipleOf(3)).isFalse();
   }
+
+  @Test
+  public void should_return_true_if_number_is_3_when_testing_if_multiple_of_3() throws Exception {
+    Number numberThree = new Number(3);
+
+    assertThat(numberThree.isMultipleOf(3)).isTrue();
+  }
+
+  @Test
+  public void should_return_true_if_number_is_an_int_multiple_of_3_when_testing_if_multiple_of_3() throws Exception {
+    Number anyNumber = new Number(9);
+    Number anotherAnyNumber = new Number(12);
+
+    assertThat(anyNumber.isMultipleOf(3)).isTrue();
+    assertThat(anotherAnyNumber.isMultipleOf(3)).isTrue();
+  }
 }
