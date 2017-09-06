@@ -1,8 +1,5 @@
 package fr.fizzbuzz;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.Function;
 import java.util.stream.IntStream;
 
 public class Number {
@@ -15,22 +12,23 @@ public class Number {
     this.value = value;
   }
 
+  @Deprecated
   public boolean isMultipleOfThree(int numberToTest) {
     if (numberToTest != 0 && numberToTest%3 == 0)
       return true;
     return false;
   }
 
+  @Deprecated
   public boolean isMultipleOfFive(int numberToTest) {
     if (numberToTest != 0 && numberToTest%5 == 0)
       return true;
     return false;
   }
 
-  public boolean isMultipleOf(int multiplicityToTest) {
-    if (value != 0 && value%multiplicityToTest == 0)
-      return true;
-    return false;
+  @Deprecated
+  public boolean isMultipleOfMultiplicity(int multiplicityToTest) {
+    return isMultipleOf(multiplicityToTest);
   }
 
   public boolean isMultipleOf(int... multiplicities) {
