@@ -42,4 +42,11 @@ public class NumberTest {
   public void should_return_true_when_a_multiple_of_5_other_than_5_is_given() throws Exception {
     assertThat(number.isMultipleOfFive(20)).isTrue();
   }
+
+  @Test
+  public void should_return_false_if_number_is_0_when_testing_if_multiple_of_3() throws Exception {
+    Number zeroNumber = new Number(0);
+
+    assertThat(zeroNumber.isMultipleOf(3)).isFalse();
+  }
 }
