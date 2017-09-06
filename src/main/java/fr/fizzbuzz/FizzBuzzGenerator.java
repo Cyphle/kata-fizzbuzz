@@ -24,12 +24,16 @@ public class FizzBuzzGenerator {
   }
 
   private void getWordToPrint(StringJoiner fizzBuzzSuite, Number number) {
+    String word = Integer.toString(number.getValue());
+
     for (Multiplicity multiplicity : Multiplicity.values()) {
-      if (number.isMultipleOf(multiplicity.value))
-        fizzBuzzSuite.add(multiplicity.word);
-      else
-        fizzBuzzSuite.add(Integer.toString(number.getValue()));
+      if (number.isMultipleOf(multiplicity.value)) {
+        word = multiplicity.word;
+        break;
+      }
     }
+
+    fizzBuzzSuite.add(word);
   }
 
   private void createNumbers(int suiteStart, int suiteEnd) {
