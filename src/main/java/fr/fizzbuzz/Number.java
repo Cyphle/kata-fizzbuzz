@@ -9,6 +9,10 @@ public class Number {
     this.value = value;
   }
 
+  public int getValue() {
+    return value;
+  }
+
   public boolean isMultipleOf(int... multiplicities) {
     return value!= 0 && IntStream.of(multiplicities)
             .allMatch(multiplicity -> value%multiplicity == 0);
