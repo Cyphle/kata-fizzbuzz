@@ -65,4 +65,18 @@ public class NumberTest {
     assertThat(anyNumber.isMultipleOf(3)).isTrue();
     assertThat(anotherAnyNumber.isMultipleOf(3)).isTrue();
   }
+
+  @Test
+  public void should_return_false_if_number_is_0_when_testing_if_multiple_of_5() throws Exception {
+    Number zeroNumber = new Number(0);
+
+    assertThat(zeroNumber.isMultipleOf(5)).isFalse();
+  }
+
+  @Test
+  public void should_return_true_if_number_is_5_when_testing_if_multiple_of_5() throws Exception {
+    Number numberFive = new Number(5);
+
+    assertThat(numberFive.isMultipleOf(5)).isTrue();
+  }
 }
