@@ -28,4 +28,9 @@ public class FizzBuzzGeneratorTest {
   public void should_print_fizzbuzz_from_1_to_10() throws Exception {
     assertThat(generator.generate(1, 10)).isEqualTo("1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz");
   }
+
+  @Test
+  public void should_print_fizzbuzz_from_1_to_20() throws Exception {
+    assertThat(generator.generate(1, 20)).isEqualTo("1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz");
+  }
 }

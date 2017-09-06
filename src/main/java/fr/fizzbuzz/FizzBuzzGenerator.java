@@ -27,10 +27,7 @@ public class FizzBuzzGenerator {
     String word = Integer.toString(number.getValue());
 
     for (Multiplicity multiplicity : Multiplicity.values()) {
-      if (number.isMultipleOf(multiplicity.value)) {
-        word = multiplicity.word;
-        break;
-      }
+      if (number.isMultipleOf(multiplicity.value)) word = multiplicity.word;
     }
 
     fizzBuzzSuite.add(word);
