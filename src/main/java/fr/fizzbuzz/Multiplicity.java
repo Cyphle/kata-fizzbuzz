@@ -10,16 +10,20 @@ public enum Multiplicity {
   THREE_FIVE(new int[] {3, 5}, "FizzBuzz");
 
   public final int[] value;
-  public final String word;
+  private final String word;
 
   Multiplicity(int[] value, String word) {
     this.value = value;
     this.word = word;
   }
 
+  public String getWord() {
+    return this.word;
+  }
+
   public static List<Multiplicity> getOrderedValues() {
     return Arrays.stream(values())
-            .sorted((firstValue, secondValue) -> firstValue.value.length - secondValue.value.length)
+            .sorted((firstValue, secondValue) -> secondValue.value.length - firstValue.value.length)
             .collect(Collectors.toList());
   }
 }

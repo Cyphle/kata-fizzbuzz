@@ -19,14 +19,11 @@ class FizzBuzzGenerator {
   }
 
   private void getWordForPosition(int suitePosition) {
-    String word = Integer.toString(suitePosition);
-
-    for (Multiplicity multiplicity : Multiplicity.getOrderedValues()) {
-      Number suitePositionInNumber = new Number(suitePosition);
-      if (suitePositionInNumber.isMultipleOf(multiplicity.value))
-        word = multiplicity.word;
-    }
-
-    fizzBuzzSuite.add(word);
+    fizzBuzzSuite.add(Multiplicity.getOrderedValues()
+            .stream()
+            .filter(multiplicity -> new Number(suitePosition).isMultipleOf(multiplicity.value))
+            .map(Multiplicity::getWord)
+            .findAny()
+            .orElse(Integer.toString(suitePosition)));
   }
 }
