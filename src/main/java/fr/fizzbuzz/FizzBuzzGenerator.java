@@ -1,37 +1,30 @@
 package fr.fizzbuzz;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.StringJoiner;
+import java.util.stream.IntStream;
 
 class FizzBuzzGenerator {
-  private final List<Number> numbers;
   private StringJoiner fizzBuzzSuite;
 
   FizzBuzzGenerator() {
-    numbers = new ArrayList<>();
     fizzBuzzSuite = new StringJoiner(" ");
   }
 
   String generate(int suiteEnd) {
-    createNumbers(suiteEnd);
-
-    numbers.forEach(number -> getWordToPrint(fizzBuzzSuite, number));
+    IntStream
+            .range(1, suiteEnd + 1)
+            .forEach(this::getWordForPosition);
 
     return fizzBuzzSuite.toString();
   }
 
-  private void createNumbers(int suiteEnd) {
-    for (int i = 1; i <= suiteEnd; ++i) {
-      numbers.add(new Number(i));
-    }
-  }
-
-  private void getWordToPrint(StringJoiner fizzBuzzSuite, Number number) {
-    String word = Integer.toString(number.getValue());
+  private void getWordForPosition(int suitePosition) {
+    String word = Integer.toString(suitePosition);
 
     for (Multiplicity multiplicity : Multiplicity.values()) {
-      if (number.isMultipleOf(multiplicity.value)) word = multiplicity.word;
+      Number suitePositionInNumber = new Number(suitePosition);
+      if (suitePositionInNumber.isMultipleOf(multiplicity.value))
+        word = multiplicity.word;
     }
 
     fizzBuzzSuite.add(word);
