@@ -4,7 +4,7 @@ import java.util.StringJoiner;
 import java.util.stream.IntStream;
 
 class FizzBuzzGenerator {
-  private StringJoiner fizzBuzzSuite;
+  private final StringJoiner fizzBuzzSuite;
 
   FizzBuzzGenerator() {
     fizzBuzzSuite = new StringJoiner(" ");
