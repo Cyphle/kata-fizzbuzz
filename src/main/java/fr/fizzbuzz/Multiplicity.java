@@ -1,5 +1,9 @@
 package fr.fizzbuzz;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public enum Multiplicity {
   THREE(new int[] {3}, "Fizz"),
   FIVE(new int[] {5}, "Buzz"),
@@ -11,5 +15,11 @@ public enum Multiplicity {
   Multiplicity(int[] value, String word) {
     this.value = value;
     this.word = word;
+  }
+
+  public static List<Multiplicity> getOrderedValues() {
+    return Arrays.stream(values())
+            .sorted((firstValue, secondValue) -> firstValue.value.length - secondValue.value.length)
+            .collect(Collectors.toList());
   }
 }

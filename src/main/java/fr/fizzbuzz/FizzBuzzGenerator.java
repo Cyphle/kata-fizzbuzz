@@ -21,7 +21,7 @@ class FizzBuzzGenerator {
   private void getWordForPosition(int suitePosition) {
     String word = Integer.toString(suitePosition);
 
-    for (Multiplicity multiplicity : Multiplicity.values()) {
+    for (Multiplicity multiplicity : Multiplicity.getOrderedValues()) {
       Number suitePositionInNumber = new Number(suitePosition);
       if (suitePositionInNumber.isMultipleOf(multiplicity.value))
         word = multiplicity.word;
