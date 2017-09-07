@@ -1,39 +1,29 @@
 package fr.fizzbuzz;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.StringJoiner;
+import java.util.stream.IntStream;
 
 class FizzBuzzGenerator {
-  private final List<Number> numbers;
+  private final StringJoiner fizzBuzzSuite;
 
   FizzBuzzGenerator() {
-    numbers = new ArrayList<>();
+    fizzBuzzSuite = new StringJoiner(" ");
   }
 
-  String generate(int suiteStart, int suiteEnd) {
-    createNumbers(suiteStart, suiteEnd);
-
-    StringJoiner fizzBuzzSuite = new StringJoiner(" ");
-
-    numbers.forEach(number -> getWordToPrint(fizzBuzzSuite, number));
+  String generate(int suiteEnd) {
+    IntStream
+            .range(1, suiteEnd + 1)
+            .forEach(this::getWordForPosition);
 
     return fizzBuzzSuite.toString();
   }
 
-  private void createNumbers(int suiteStart, int suiteEnd) {
-    for (int i = suiteStart; i <= suiteEnd; ++i) {
-      numbers.add(new Number(i));
-    }
-  }
-
-  private void getWordToPrint(StringJoiner fizzBuzzSuite, Number number) {
-    String word = Integer.toString(number.getValue());
-
-    for (Multiplicity multiplicity : Multiplicity.values()) {
-      if (number.isMultipleOf(multiplicity.value)) word = multiplicity.word;
-    }
-
-    fizzBuzzSuite.add(word);
+  private void getWordForPosition(int suitePosition) {
+    fizzBuzzSuite.add(Multiplicity.getOrderedValues()
+            .stream()
+            .filter(multiplicity -> new Number(suitePosition).isMultipleOf(multiplicity.value))
+            .map(Multiplicity::getWord)
+            .findAny()
+            .orElse(Integer.toString(suitePosition)));
   }
 }
