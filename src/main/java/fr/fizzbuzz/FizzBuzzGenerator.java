@@ -6,15 +6,15 @@ import java.util.StringJoiner;
 
 class FizzBuzzGenerator {
   private final List<Number> numbers;
+  private StringJoiner fizzBuzzSuite;
 
   FizzBuzzGenerator() {
     numbers = new ArrayList<>();
+    fizzBuzzSuite = new StringJoiner(" ");
   }
 
   String generate(int suiteEnd) {
     createNumbers(suiteEnd);
-
-    StringJoiner fizzBuzzSuite = new StringJoiner(" ");
 
     numbers.forEach(number -> getWordToPrint(fizzBuzzSuite, number));
 
