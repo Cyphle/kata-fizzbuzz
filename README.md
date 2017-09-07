@@ -14,4 +14,4 @@ Ecrire ce kata avec TDD en commençant par les calculs sur les multiples.
 Puis enrichir avec une suite de nombres.
 
 # Exemple
-1 2 Fizz 4 Buzz …
+1 2 Fizz 4 Buzz …# kata-roman-numbers

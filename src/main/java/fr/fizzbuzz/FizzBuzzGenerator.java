@@ -11,8 +11,8 @@ class FizzBuzzGenerator {
     numbers = new ArrayList<>();
   }
 
-  String generate(int suiteStart, int suiteEnd) {
-    createNumbers(suiteStart, suiteEnd);
+  String generate(int suiteEnd) {
+    createNumbers(suiteEnd);
 
     StringJoiner fizzBuzzSuite = new StringJoiner(" ");
 
@@ -21,8 +21,8 @@ class FizzBuzzGenerator {
     return fizzBuzzSuite.toString();
   }
 
-  private void createNumbers(int suiteStart, int suiteEnd) {
-    for (int i = suiteStart; i <= suiteEnd; ++i) {
+  private void createNumbers(int suiteEnd) {
+    for (int i = 1; i <= suiteEnd; ++i) {
       numbers.add(new Number(i));
     }
   }
